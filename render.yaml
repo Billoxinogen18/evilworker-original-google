@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: evilworker-original-google
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node proxy_server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
